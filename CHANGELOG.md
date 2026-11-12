@@ -1,8 +1,8 @@
 # Changelog
 
-## Unreleased
+## v0.3.2 (2026-11-12)
 
-Fixed:
+Fixed, reported and fixed by @boeboe (issue #4, PR #10):
 
 - GET_FILE_INFO (g70v7) answers with the file name of the request again,
   as in v0.3.0. IEEE 1815-2012 4.4.18 has the file name octets "filled in
