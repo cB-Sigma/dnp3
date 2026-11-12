@@ -415,8 +415,9 @@ func TestOutstationFileRules(t *testing.T) {
 	if d, err := fc.Info(ctx, "cfg"); err != nil || d.Type != 0 || d.Size != 3 {
 		t.Errorf("directory information %+v %v", d, err)
 	}
-	// The information names the file as its directory entry does.
-	if d, err := fc.Info(ctx, `\cfg\new.bin`); err != nil || d.Name != "new.bin" || d.Size != 12 {
+	// IEEE 1815-2012 4.4.18: the file name of the answer is the same data
+	// as in the request.
+	if d, err := fc.Info(ctx, `\cfg\new.bin`); err != nil || d.Name != `\cfg\new.bin` || d.Size != 12 {
 		t.Errorf("file information %+v %v", d, err)
 	}
 	if _, err := fc.Info(ctx, "nope"); err == nil || !strings.Contains(err.Error(), "file-not-found") {

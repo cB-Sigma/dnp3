@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+Fixed:
+
+- GET_FILE_INFO (g70v7) answers with the file name of the request again,
+  as in v0.3.0. IEEE 1815-2012 4.4.18 has the file name octets "filled in
+  with the same data as in the request"; the base name v0.3.1 gave
+  (#8) did not follow it. Directory entries keep the base name (5.3.6).
+
 ## v0.3.1 (2026-11-07)
 
 Fixed, all reported with fixes by @boeboe (issues #2 to #5, PRs #6 to #9):

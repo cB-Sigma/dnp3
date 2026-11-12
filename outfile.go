@@ -510,11 +510,6 @@ func (a *Association) fileInfo(ctx context.Context, d FileDescriptor) chunk {
 	if info.Dir {
 		d.Type = 0
 	}
-	if path != "" {
-		// The base name, as in the file's directory entry (5.3.6); the
-		// root keeps the name it was asked by.
-		d.Name = path[strings.LastIndexByte(path, '/')+1:]
-	}
 	return fileChunk(7, d.Encode())
 }
 
